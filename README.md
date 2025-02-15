@@ -1,8 +1,12 @@
-# React + Vite
+# React + Vite - ToDo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple ToDo List application built with React using the `useReducer` hook for state management. This app allows users to add tasks, mark them as completed, edit tasks directly in the list, and delete tasks.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Tasks:** Type a new task in the input field and click "ADD" to include it in your list.
+- **Toggle Completion:** Click the checkbox next to a task to mark it as completed (or uncompleted). Completed tasks are visually indicated by a line-through.
+- **Edit Tasks:** Click the "Edit" button to switch a task into edit mode, allowing inline editing of the task text.
+- **Delete Tasks:** Remove tasks from the list with the "Delete" button.
+- **Inline Editing:** When editing a task, the edit and delete buttons are hidden, and Save/Cancel options are displayed.
+- **Disabled Editing for Completed Tasks:** The edit button is disabled for completed tasks, preventing changes to finished tasks.
