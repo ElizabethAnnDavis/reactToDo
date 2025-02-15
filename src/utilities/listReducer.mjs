@@ -1,23 +1,34 @@
+/* listReducer.mjs */
+
 function listReducer(state, action){
     switch(action.type){
         case ACTIONS.add:
-            console.log(`ADDED ${action.payload}`);
             return [...state, action.payload];
+        case ACTIONS.delete:
+            //console.log(action.payload.index);
+            console.log(action.payload)
+            return state.filter((item) => item.text !== action.payload);
+        case ACTIONS.edit:
+            return state.map((item, index) =>
+                index === action.payload.index ? { ...item, text: action.payload.newText} : item
+            );
         case ACTIONS.save:
             console.log("SAVED")
-        case ACTIONS.delete:
-            console.log("DELETED");
-        case ACTIONS.edit:
-            console.log("EDITED");
+            return state;
+        case ACTIONS.toggle:
+            return state.map((item, index) =>
+                index === action.payload.index ? { ...item, checked: action.payload.checked } : item
+            );
         default:
-            console.log("Something went wrong");
+            return state;
     };
 }
 
 const ACTIONS = {
-    save: 'save',
+    add: 'add',
     delete: 'delete',
     edit: 'edit',
+    save: 'save',
     toggle: 'toggle'
 }
 

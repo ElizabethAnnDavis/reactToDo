@@ -1,3 +1,5 @@
+/* App */
+
 import { useState, useReducer } from 'react';
 import './App.css';
 import { listReducer, ACTIONS } from './utilities/listReducer.mjs';
@@ -25,7 +27,7 @@ export default function App() {
         </div>
         <ul>
           {state.map((item, index) => (
-            <ListItem key={index} value={item} dispatch={dispatch} />
+            <ListItem key={index} value={{ ...item, index }} dispatch={dispatch} />
           ))}
         </ul>
       </form>
