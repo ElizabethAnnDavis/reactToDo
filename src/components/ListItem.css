@@ -1,0 +1,15 @@
+li { 
+    display: 'flex'; 
+    align-items: 'center'; 
+    justify-content: 'space-between';
+    width: 500px;
+}
+
+button {
+    margin-left: 5px;
+}
+
+button:hover {
+    background-color: grey;
+    border: solid grey;
+}
