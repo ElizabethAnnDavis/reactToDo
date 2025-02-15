@@ -12,6 +12,7 @@ ul {
 
 button {
   margin-left: 5px;
+  color: lightgrey;
 }
 
 button:hover {

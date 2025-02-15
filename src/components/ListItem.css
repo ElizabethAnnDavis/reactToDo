@@ -13,3 +13,8 @@ button:hover {
     background-color: grey;
     border: solid grey;
 }
+
+button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}

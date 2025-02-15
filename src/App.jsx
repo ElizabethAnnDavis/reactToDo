@@ -1,5 +1,3 @@
-/* App */
-
 import { useState, useReducer } from 'react';
 import './App.css';
 import { listReducer, ACTIONS } from './utilities/listReducer.mjs';

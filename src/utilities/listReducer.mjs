@@ -1,5 +1,3 @@
-/* listReducer.mjs */
-
 function listReducer(state, { type, payload }){
     switch(type){
         case ACTIONS.add:

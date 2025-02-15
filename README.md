@@ -1,6 +1,6 @@
 # React + Vite - ToDo List App
 
-A simple ToDo List application built with React using the `useReducer` hook for state management. This app allows users to add tasks, mark them as completed, edit tasks directly in the list, and delete tasks.
+A simple ToDo List application built with React using the `useReducer` hook for state management. This app allows users to add tasks, mark them as completed, edit tasks in the list, and delete tasks.
 
 ## Features
 

@@ -1,4 +1,3 @@
-/* ListItem */
 import { useState } from 'react';
 import './ListItem.css';
 import { ACTIONS } from '../utilities/listReducer.mjs';
