@@ -9,7 +9,7 @@ export default function ListItem({value, dispatch}){
     function handleEdit() {
         const newText = prompt("Edit task:", value.text);
         if (newText !== null && newText.trim() && newText !== value.text) {
-            dispatch({ type: ACTIONS.edit, payload: { index: value.index, newText } });
+            dispatch({ type: ACTIONS.edit, payload: { index: value.id, newText } });
         };
     }
 
@@ -18,11 +18,11 @@ export default function ListItem({value, dispatch}){
             <input 
                 type='checkbox' 
                 checked={value.checked} 
-                onChange={() => dispatch({type: ACTIONS.toggle, payload: { index: value.index, checked: !value.checked }})}
+                onChange={() => dispatch({type: ACTIONS.toggle, payload: { id: value.id, checked: !value.checked }})}
             />
             <span style={{ textDecoration: value.checked ? 'line-through' : 'none' }}>{value.text}</span>
             <button onClick={handleEdit}>Edit</button>
-            <button onClick={() => dispatch({ type: ACTIONS.delete, payload: value.text })}>Delete</button>
+            <button onClick={() => dispatch({ type: ACTIONS.delete, payload: value.id })}>Delete</button>
         </li>
     );
 }

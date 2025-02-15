@@ -7,17 +7,17 @@ function listReducer(state, action){
         case ACTIONS.delete:
             //console.log(action.payload.index);
             console.log(action.payload)
-            return state.filter((item) => item.text !== action.payload);
+            return state.filter((item) => item.id !== action.payload);
         case ACTIONS.edit:
-            return state.map((item, index) =>
-                index === action.payload.index ? { ...item, text: action.payload.newText} : item
+            return state.map((item) =>
+                item.id === action.payload.id ? { ...item, text: action.payload.newText } : item
             );
         case ACTIONS.save:
             console.log("SAVED")
             return state;
         case ACTIONS.toggle:
-            return state.map((item, index) =>
-                index === action.payload.index ? { ...item, checked: action.payload.checked } : item
+            return state.map((item) =>
+                item.id === action.payload.id ? { ...item, checked: action.payload.checked } : item
             );
         default:
             return state;

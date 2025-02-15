@@ -12,7 +12,12 @@ export default function App() {
   function handleSave(e) {
     e.preventDefault();
     if (value.trim()) {
-      dispatch({ type: ACTIONS.add, payload: { text: value, checked: false } });
+      const newItem = {
+        id: Date.now(),
+        text: value,
+        checked: false
+      };
+      dispatch({ type: ACTIONS.add, payload: newItem });
       setValue('');
     }
   }
@@ -26,8 +31,8 @@ export default function App() {
           <button type='submit'>ADD</button>
         </div>
         <ul>
-          {state.map((item, index) => (
-            <ListItem key={index} value={{ ...item, index }} dispatch={dispatch} />
+          {state.map((item) => (
+            <ListItem key={item.id} value={item} dispatch={dispatch} />
           ))}
         </ul>
       </form>
