@@ -1,23 +1,21 @@
 /* listReducer.mjs */
 
-function listReducer(state, action){
-    switch(action.type){
+function listReducer(state, { type, payload }){
+    switch(type){
         case ACTIONS.add:
-            return [...state, action.payload];
+            return [...state, payload];
         case ACTIONS.delete:
-            //console.log(action.payload.index);
-            console.log(action.payload)
-            return state.filter((item) => item.id !== action.payload);
+            return state.filter((item) => item.id !== payload);
         case ACTIONS.edit:
             return state.map((item) =>
-                item.id === action.payload.id ? { ...item, text: action.payload.newText } : item
+                item.id === payload.id ? { ...item, text: payload.newText } : item
             );
         case ACTIONS.save:
             console.log("SAVED")
             return state;
         case ACTIONS.toggle:
             return state.map((item) =>
-                item.id === action.payload.id ? { ...item, checked: action.payload.checked } : item
+                item.id === payload.id ? { ...item, checked: payload.checked } : item
             );
         default:
             return state;
